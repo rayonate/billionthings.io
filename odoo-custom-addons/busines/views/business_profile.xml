@@ -1,0 +1,50 @@
+<odoo>
+    <record id='busines_profile_action' model='ir.actions.act_window'>
+        <field name="name">Business Profile</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Business Profile" id="business_profile_base_menu" />
+    <menuitem name="Profiles" id="business_profile_menu" parent="business_profile_base_menu" action="busines_profile_action" />
+
+    <!-- form -->
+    <record id="business_profile_view_form" model="ir.ui.view">
+        <field name="name">Business Profile Form</field>
+        <field name="model">business.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- tree -->
+    <record id="business_profile_view_tree" model="ir.ui.view">
+        <field name="name">Business Profile List</field>
+        <field name="model">business.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- search -->
+    <record id="library_book_view_search" model="ir.ui.view">
+        <field name="name">Business Profile Search</field>
+        <field name="model">business.profile</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="description" />
+            </search>
+        </field>
+    </record>
+</odoo>
