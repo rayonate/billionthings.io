@@ -6,4 +6,3 @@ class ResUsersExt(models.Model):
     contact_no = fields.Char(string='Telephone Number', required=True)
     last_name = fields.Char(string='Last Name', required=True)
    
-   

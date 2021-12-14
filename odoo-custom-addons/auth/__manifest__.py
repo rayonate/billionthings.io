@@ -12,7 +12,8 @@
     'depends' : ['base', 'website'],
     'data': [
         'security/ir.model.access.csv',
-        'views/website_form.xml' 
+        'views/website_form.xml',
+        'views/assets.xml' 
     ], 
     'demo': [],
     'installable': True,
