@@ -16,3 +16,6 @@ class BusinesProfile(models.Model):
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+
+
+#access_business_profile,busines.profile,model_busines_profile,group_service_providers,1,1,1,1

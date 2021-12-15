@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Busines",
+    'name': "Advertisement",
     'sequence': 10,
     'summary': """
-        Business Profiles of the service providers
+        Advertisements of the service providers
         """,
 
     'description': """
@@ -28,13 +28,10 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
-        'views/business_profile.xml'
+        'views/advertisement.xml'
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+
     'installable': True,
     'application': True,
     'auto_install': False,
