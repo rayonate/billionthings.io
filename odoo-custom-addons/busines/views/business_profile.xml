@@ -43,18 +43,6 @@
                         <field name="userId" />
                         <field name="status" />
                     </group>
-
-                     <group>
-                        <field name="no" />
-                        <field name="addressLine1" />
-                        <field name="addressLine2" />
-                        <field name="province" />
-                        <field name="postalCode" />
-                        <field name="telephone1" />
-                        <field name="telephone2" />
-                        <field name="email" />
-                        <field name="locationl" />
-                    </group>
                 </group>
             </form>
         </field>
@@ -104,40 +92,7 @@
 									<li>
 										Description:
 										<field name="description" />
-									</li>
-                                    <li>
-										No:
-										 <field name="no" />
-									</li>
-                                    <li>
-										AddressLine 1:
-										 <field name="addressLine1" />
-									</li>
-                                    <li>
-										AddressLine 2:
-										<field name="addressLine2" />
-									</li>
-                                    <li>
-										Province:
-										<field name="province" />
-									</li>
-                                    <li>
-										Telephone1:
-										 <field name="telephone1" />
-									</li>
-                                    <li>
-										Telephone 2:
-										<field name="telephone2" />
-									</li>
-
-                                    <li>
-										Email:
-										<field name="email" />
-									</li>
-                                    <li>
-										Location:
-										<field name="locationl" />
-									</li>                      
+									</li>                  
 								</ul>
 							</div>
 						</div>
