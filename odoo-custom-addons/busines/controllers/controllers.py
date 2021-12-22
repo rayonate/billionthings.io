@@ -20,8 +20,12 @@ class Busines(http.Controller):
      @http.route('/profiles/create/action', type="http", website=True, auth='public')
      def library_book_create(self, **kw):
         print('------------print POST data', kw)
+        businessSlug = kw.get('businessSlug')
+        print(businessSlug)
         request.env['business.profile'].sudo().create(kw)
-        return request.render('business_address.create_address', {})
+        return request.render('business_address.create_address', {
+           'businessSlug': businessSlug
+        })
 
 
 #     @http.route('/busines/busines/objects/', auth='public')

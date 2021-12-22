@@ -28,7 +28,6 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
         'views/business_profile.xml',
         'views/web_profile.xml'
     ],
