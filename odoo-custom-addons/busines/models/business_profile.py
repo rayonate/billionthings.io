@@ -7,9 +7,23 @@ from odoo import models, fields, api
 class BusinesProfile(models.Model):
     _name = 'business.profile'
     _description = 'Business Profile'
-
-    title = fields.Char()
+ 
+    #Business Info - Add here the business description with all details and necessary information.
+    businessType = fields.Selection([
+        ('saloon', 'Saloon'),
+        ('restaurant', 'Restaurant')
+    ], )
+    businessName = fields.Char()
+    businessSlug = fields.Char()
     description = fields.Text()
+    userId = fields.Char()
+
+    status = fields.Selection([
+        ('approved', 'Approved'),
+        ('pending', 'Pending'),
+        ('rejected', 'rejected'),
+    ], default='pending')
+
 
 
 #     @api.depends('value')

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Busines",
+    'name': "Business Address",
     'sequence': 10,
     'summary': """
-        Business Profiles of the service providers
+        Business Address
         """,
 
     'description': """
@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website'],
+    'depends': ['base','busines'],
 
     # always loaded
     'data': [
@@ -28,14 +28,11 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
-        'views/business_profile.xml',
-        'views/web_profile.xml'
+        'views/business_address.xml'
+
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+
     'installable': True,
     'application': True,
     'auto_install': False,

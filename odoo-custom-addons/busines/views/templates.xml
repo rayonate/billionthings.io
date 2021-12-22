@@ -1,9 +1,13 @@
 <odoo>
-  <template id="assets_frontend" inherit_id="web.assets_frontend">
+
+<!--
+<template id="assets_frontend" inherit_id="web.assets_frontend">
     <xpath expr="." position="inside">
       <link href="/busines/static/src/css/my_library.css" rel="stylesheet" type="text/css" />
       <link href="/busines/static/src/scss/my_library.scss" rel="stylesheet" type="text/scss" />
       <script src="/busines/static/src/js/my_library.js" type="text/javascript" />
     </xpath>
   </template>
+-->
+  
 </odoo>
