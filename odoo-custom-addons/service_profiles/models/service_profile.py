@@ -18,8 +18,11 @@ from odoo import models, fields, api
 #             record.value2 = float(record.value) / 100
 
 class ServiceProfile(models.Model):
+    _sql_constraints = [
+        ('business_slug', 'unique (business_slug)', 'The field  must be unique  !')
+    ]
     _inherit = 'res.partner'
-   
+
     business_slug = fields.Char()
     status = fields.Selection([
         ('approved', 'Approved'),
@@ -32,5 +35,3 @@ class ServiceProfile(models.Model):
     ], )
     description = fields.Text()
     userId = fields.Char()
-
-    

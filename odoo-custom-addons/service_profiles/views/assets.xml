@@ -1,0 +1,8 @@
+<odoo>
+    <template id="mymodule_web_assets" name="My Web Assets"
+              inherit_id="web.assets_frontend">
+       <xpath expr="." position="inside">
+        <script type="text/javascript" src="/service_profiles/static/js/test.js"></script>          
+      </xpath>
+    </template>
+  </odoo>

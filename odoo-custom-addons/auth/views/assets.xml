@@ -5,6 +5,7 @@
 
        <link rel="stylesheet" type="text/css" href="/auth/static/lib/css/auth.css"/>
        <script type="text/javascript" src="/auth/static/lib/js/auth.js"></script>
+
         
     </xpath>
   </template>

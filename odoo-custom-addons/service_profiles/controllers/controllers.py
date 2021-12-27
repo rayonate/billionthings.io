@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
-
+import json
 
 class Busines(http.Controller):
 
@@ -41,3 +41,13 @@ class Busines(http.Controller):
         return request.render('service_profiles.create_profile', {
             'business_slug': business_slug
         })
+    
+    @http.route("/check_method_get", auth='none', type='http',method=['GET'])
+    def check_method_get(self,**values):
+        output = {
+            'results':{
+                'code':200,
+                'message':'OK'
+            }
+        }
+        return json.dumps(output)

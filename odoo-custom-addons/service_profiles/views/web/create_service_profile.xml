@@ -34,7 +34,8 @@
 											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 											<div class="form-group">
 												<label for=" businessType" class="control-label">
-													Business Type<span class="text-danger">*</span>
+													Business Type
+													<span class="text-danger">*</span>
 												</label>
 												<select name="businessType" t-att-value="businessType" id="businessType" class="form-control" required="required">
 													<option value="saloon">
@@ -45,31 +46,28 @@
 													</option>
 												</select>
 											</div>
-                                 <div class="form-group">
+											<div class="form-group">
 												<label for="name" class="control-label">
-													Business Name<span class="text-danger">*</span>
+													Business Name
+													<span class="text-danger">*</span>
 												</label>
 												<input type="text" name="name" t-att-value="name" id="name" class="form-control" required="required" />
 											</div>
 											<div class="form-group">
 												<label for="business_slug" class="control-label">
-													Business Slug<span class="text-danger">*</span>
+													Business Slug
+													<span class="text-danger">*</span>
 												</label>
-												<input type="text" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" required="required" />
+												<input onkeyup="printConsole()" type="text" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" required="required" />
 											</div>
 											<div class="form-group">
 												<label for="description" class="control-label">
-													Description<span class="text-danger">*</span>
+													Description
+													<span class="text-danger">*</span>
 												</label>
-												<textarea name="description" t-att-value="description" id="description" class="form-control" required="required">
-												</textarea>
+												<textarea name="description" t-att-value="description" id="description" class="form-control" required="required"></textarea>
 											</div>
-											<div class="form-group">
-												<label for="userId" class="control-label">
-													User Id<span class="text-danger">*</span>
-												</label>
-												<input type="text" name="userId" t-att-value="userId" id="userId" class="form-control" required="required" />
-											</div>
+											<!-- submit next -->
 											<div class="clearfix oe_login_buttons">
 												<button type="submit" class="btn btn-primary pull-right">
 													Next
@@ -80,8 +78,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row mt-5">
-						</div>
+						<div class="row mt-5"></div>
 					</div>
 				</div>
 			</div>
