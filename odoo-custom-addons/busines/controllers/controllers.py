@@ -13,6 +13,7 @@ class Busines(http.Controller):
         return request.render('busines.profiles_list_page', {
             'profiles': profiles
         })
+        
      @http.route('/profiles/create/', type="http", website=True, auth='public')
      def book_webform(self, **kw):
         return request.render('busines.create_profile', {})
@@ -23,9 +24,7 @@ class Busines(http.Controller):
         businessSlug = kw.get('businessSlug')
         print(businessSlug)
         request.env['business.profile'].sudo().create(kw)
-        return request.render('business_address.create_address', {
-           'businessSlug': businessSlug
-        })
+        return request.render('busines.create_profile', {})
 
 
 #     @http.route('/busines/busines/objects/', auth='public')

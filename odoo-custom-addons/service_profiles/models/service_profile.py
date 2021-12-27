@@ -26,5 +26,11 @@ class ServiceProfile(models.Model):
         ('pending', 'Pending'),
         ('rejected', 'rejected'),
     ], default='pending')
+    businessType = fields.Selection([
+        ('saloon', 'Saloon'),
+        ('restaurant', 'Restaurant')
+    ], )
+    description = fields.Text()
+    userId = fields.Char()
 
-   
+    

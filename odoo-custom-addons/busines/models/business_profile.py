@@ -16,7 +16,7 @@ class BusinesProfile(models.Model):
     businessName = fields.Char()
     businessSlug = fields.Char()
     description = fields.Text()
-    userId = fields.Char()
+    user_id = fields.Many2one('res.users','Current User', default=lambda self: self.env.user)
     status = fields.Selection([
         ('approved', 'Approved'),
         ('pending', 'Pending'),
