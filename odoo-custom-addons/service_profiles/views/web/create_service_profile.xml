@@ -46,30 +46,39 @@
 													</option>
 												</select>
 											</div>
+											<!-- business name -->
 											<div class="form-group">
 												<label for="name" class="control-label">
 													Business Name
 													<span class="text-danger">*</span>
 												</label>
-												<input type="text" name="name" t-att-value="name" id="name" class="form-control" required="required" />
+												<input onkeyup="businessNameValidation()" type="text" name="name" t-att-value="name" id="name" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_name"></div>
 											</div>
+
+											<!-- slug -->
 											<div class="form-group">
 												<label for="business_slug" class="control-label">
 													Business Slug
 													<span class="text-danger">*</span>
 												</label>
-												<input onkeyup="printConsole()" type="text" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" required="required" />
+												<input onkeyup="businessSlugValidation()" type="text" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_slug"></div>
 											</div>
+											
+											<!-- description -->
 											<div class="form-group">
 												<label for="description" class="control-label">
 													Description
 													<span class="text-danger">*</span>
 												</label>
-												<textarea name="description" t-att-value="description" id="description" class="form-control" required="required"></textarea>
+												<textarea onkeyup="descriptionValidation()" name="description" t-att-value="description" id="description" class="form-control" required="required"></textarea>
+												<div class="validation-error-msg" id="validation_description"></div>
 											</div>
+
 											<!-- submit next -->
 											<div class="clearfix oe_login_buttons">
-												<button type="submit" class="btn btn-primary pull-right">
+												<button id="profileNextBtn" type="submit" class="btn btn-primary pull-right">
 													Next
 												</button>
 											</div>

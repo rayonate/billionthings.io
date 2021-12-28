@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import service_profile
+from . import service_profile, categories

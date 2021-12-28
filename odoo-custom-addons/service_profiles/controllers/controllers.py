@@ -2,6 +2,8 @@
 from odoo import http
 from odoo.http import request
 import json
+import os.path
+
 
 class Busines(http.Controller):
 
@@ -17,7 +19,7 @@ class Busines(http.Controller):
         for profile in profiles:
             print('-----------printing profiles -----------------',
                   profile.businessName)
-        
+
         return request.render('service_profiles.profiles_list_page', {
             'profiles': profiles
         })
@@ -36,18 +38,36 @@ class Busines(http.Controller):
         business_slug = kw.get('business_slug')
         print(business_slug)
         user = request.env.user
-        service =  request.env['res.partner'].sudo().create(kw)
+        service = request.env['res.partner'].sudo().create(kw)
         service.write({'user_id': user.id})
         return request.render('service_profiles.create_profile', {
             'business_slug': business_slug
         })
-    
-    @http.route("/check_method_get", auth='none', type='http',method=['GET'])
-    def check_method_get(self,**values):
-        output = {
-            'results':{
-                'code':200,
-                'message':'OK'
+
+    @http.route("/check_business_slug", auth='public', methods=['POST'], type='json', csrf=False)
+    def check_method_get(self, **values):
+        """
+        check for existing business slugs asynchronously 
+        """
+        value = json.loads(request.httprequest.data)
+        profiles = request.env['res.partner'].sudo().search(
+            [('business_slug', '=', value.get('business_slug'))]
+        )
+        output = None
+        if profiles.exists():
+            output = {
+                'data': {
+                    'code': 200,
+                    'exists': True,
+                    'message': "Business Slug is already Taken"
+                }
             }
-        }
-        return json.dumps(output)
+        else:
+            output = {
+                'data': {
+                    'code': 200,
+                    'exists': False,
+                    'message': "Business Slug is available"
+                }
+            }
+        return output

@@ -222,7 +222,6 @@ function confirm_passwordValidation() {
 
 
 function validateForm() {
-
     if (
         (document.getElementById("emailErr").innerHTML == "") &&
         (document.getElementById("nameErr").innerHTML == "") &&
