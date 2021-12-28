@@ -5,17 +5,13 @@ import json
 import os.path
 
 
-class Busines(http.Controller):
-
+class Business(http.Controller):
+    # render approved profile list
     @http.route('/busines/profiles/approved/', auth='public', website=True)
     def approved_list(self, **kw):
         profiles = request.env['res.partner'].sudo().search(
             [('status', '=', "approved")])
         print('printing profiles----------------------------', profiles)
-        print(request.env)
-        print(request.env.user)
-        print(request.env.user[0])
-        print(type(request.env.user))
         for profile in profiles:
             print('-----------printing profiles -----------------',
                   profile.businessName)
@@ -24,28 +20,25 @@ class Busines(http.Controller):
             'profiles': profiles
         })
 
+    # render profile creation form
     @http.route('/profiles/create/', type="http", website=True, auth='public')
-    def book_webform(self, **kw):
-        print("testing one two three")
-        print(request.env.user)
-        print(request.env.user[0])
-        print(request.env.user == request.env.user[0])
+    def service_profile_webform(self, **kw):
         return request.render('service_profiles.create_profile', {})
 
-    @http.route('/profiles/create/action', type="http", website=True, auth='public')
-    def library_book_create(self, **kw):
+    # redirect user to the address creation
+    @http.route('/profiles/address', type="http", website=True, auth='public')
+    def service_profile_create(self, **kw):
         print('------------print POST data', kw)
         business_slug = kw.get('business_slug')
-        print(business_slug)
         user = request.env.user
         service = request.env['res.partner'].sudo().create(kw)
         service.write({'user_id': user.id})
-        return request.render('service_profiles.create_profile', {
+        return request.render('service_profiles.create_address', {
             'business_slug': business_slug
         })
 
     @http.route("/check_business_slug", auth='public', methods=['POST'], type='json', csrf=False)
-    def check_method_get(self, **values):
+    def check_slug(self, **values):
         """
         check for existing business slugs asynchronously 
         """

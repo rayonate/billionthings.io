@@ -34,4 +34,4 @@ class ServiceProfile(models.Model):
         ('restaurant', 'Restaurant')
     ], )
     description = fields.Text()
-    userId = fields.Char()
+
