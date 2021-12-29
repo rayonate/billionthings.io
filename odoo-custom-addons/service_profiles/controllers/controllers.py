@@ -28,7 +28,7 @@ class Business(http.Controller):
     # redirect user to the address creation
     @http.route('/profiles/address', type="http", website=True, auth='public')
     def service_profile_create(self, **kw):
-        print('------------print POST data', kw)
+        # print('------------print POST data', kw)
         business_slug = kw.get('business_slug')
         user = request.env.user
         service = request.env['res.partner'].sudo().create(kw)
