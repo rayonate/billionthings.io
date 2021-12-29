@@ -3,6 +3,7 @@
     <xpath expr="." position="inside">
       <link rel="stylesheet" type="text/css" href="/service_profiles/static/css/profile.css" />
       <script type="text/javascript" src="/service_profiles/static/js/profile.js"></script>
+      <script type="text/javascript" src="/service_profiles/static/js/address-profile.js"></script>
     </xpath>
   </template>
 </odoo>
