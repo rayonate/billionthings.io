@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="create_addprofileImages" name="New Book">
+		<t t-call="website.layout">
+			<div id="wrap">
+				<div class="oe_structure">
+					<div class="container">
+						<div class="row mt-5">
+							<div class="col-4 bg-info align-items-center">
+								<h2>
+									2.Image Gallery
+								</h2>
+								<p>
+									Please add more relavant pictures of your Ad.
+								</p>
+							</div>
+							<div class="col-8 border border-primary">
+								<div class="row my-5">
+									<div class="col-8 mx-auto">
+										<form role="form" action="/addprofiles/images/create/action" method="POST">
+											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                            <input type="hidden" name="id" t-att-value="id" />
+										
+											<div class="form-group">
+												<label for="bt_logo" class="control-label">
+													Logo
+												</label>
+												<input  type="file" name="image_1920" t-att-value="image_1920" id="image_1920" class="form-control" />
+											</div>
+											
+
+											<!-- submit next -->
+											<div class="clearfix oe_login_buttons">
+												<button type="submit" class="btn btn-primary pull-right">
+													Next
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-5"></div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+
+</odoo>

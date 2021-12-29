@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="create_address" name="New Book">
+		<t t-call="website.layout">
+			<div id="wrap">
+				<div class="oe_structure">
+					<div class="container">
+						<div class="row mt-5">
+							<div class="col-4 bg-info align-items-center">
+								<h2>
+									3.Advertising Address
+								</h2>
+								<p>
+									Add the location address of your Ad.
+								</p>
+							</div>
+
+							<div class="col-8 border border-primary">
+								<div class="row my-5">
+									<div class="col-8 mx-auto">
+										<form role="form" action="/addprofiles/address/create/action" method="POST">
+											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+											<input type="hidden" name="id" t-att-value="id" id="id" class="form-control" />
+											<div class="form-group">
+												<label for="addressLine1" class="control-label">
+													Address Line 1<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressStreetValidation()" type="text" name="street2" t-att-value="street2" id="street2" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_address1"></div>
+											</div>
+											<div class="form-group">
+												<label for="no" class="control-label">
+													Address Line 2<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressStreet2Validation()" type="text" name="street" t-att-value="street" id="street" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_address2"></div>
+											</div>
+
+											<div class="form-group">
+												<label for="addressLine2" class="control-label">
+													City
+												</label>
+												<input onkeyup="addressCityValidation()" type="text" name="city" t-att-value="city" id="city" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_address2"></div>
+											</div>
+
+                                             <div class="form-group">
+												<label for="province" class="control-label">
+													Province<span class="text-danger">*</span>
+												</label>
+												<input  type="text" name="province" t-att-value="province" id="province" class="form-control" required="required" />
+
+											</div>
+											
+											
+											<div class="form-group">
+												<label for="code" class="control-label">
+													Postal Code
+												</label>
+												<input onkeyup="addressZipValidation()" type="text" name="code" t-att-value="code" id="code" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_zip"></div>
+											</div>
+
+
+											<div class="form-group">
+												<label for="telephone1" class="control-label">
+													Telephone 1<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressPhoneValidation()" type="text" name="phone" t-att-value="phone" id="phone" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_tp1"></div>
+											</div>
+											<div class="form-group">
+												<label for="telephone2" class="control-label">
+													Telephone 2
+												</label>
+												<input onkeyup="addressMobileValidation()" type="text" name="mobile" t-att-value="mobile" id="mobile" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_tp2"></div>
+											</div>
+											<div class="form-group">
+												<label for="email" class="control-label">
+													Email<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressEmailValidation()" type="text" name="email" t-att-value="email" id="email" class="form-control" required="required" />
+											<div class="validation-error-msg" id="validation_email"></div>
+											</div>
+
+											<div class="clearfix oe_login_buttons">
+												<button id="adsProfileBtn" type="submit" class="btn btn-primary pull-right">
+													Create
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-5">
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+
+</odoo>

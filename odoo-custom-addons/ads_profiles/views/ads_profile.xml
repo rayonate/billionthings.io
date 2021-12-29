@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_ads_profiles" model="ir.actions.act_window">
+        <field name="name">Ads Profiles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Ads Profiles
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Ads Profiles" id="profile_base_menu" />
+    <menuitem name="Profiles" id="profile_menu" parent="profile_base_menu" action="action_ads_profiles" />
+
+
+    <record id="view_ads_profile_form_inherited" model="ir.ui.view">
+        <field name="name">ad_profile.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="before">
+                <field name="bt_category"/>
+                <field name="bt_title"/>
+                <field name="bt_description"/>
+            </field>
+        </field>
+    </record>
+
+       <record id="view_partner_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts" sample="1" multi_edit="1">
+                    
+                    <field name="display_name" string="Name"/>
+                    
+                    <field name="bt_category"/>
+                    <field name="bt_title"/>
+                    <field name="bt_description"/>
+
+
+                    <field name="phone" class="o_force_ltr" optional="show"/>
+                    <field name="email" optional="show"/>
+                    <field name="city" optional="show"/>
+                    <field name="state_id" optional="hide" readonly="1"/>
+                    <field name="vat" optional="hide" readonly="1"/>
+                    <field name="category_id" optional="hide" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="parent_id" invisible="1" readonly="1"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+</odoo>
+
