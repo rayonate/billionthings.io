@@ -3,7 +3,7 @@ function addressStreetValidation() {
     let inputID = 'street'
     let validationID = 'validation_street'
     let btnID = 'addressNextBtn'
-    let regex = /^[a-zA-Z0-9-_\s]+$/;
+    let regex = /^[a-zA-Z0-9-_\\//s]+$/;
     checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12, validateAddressForm);
 }
 
@@ -11,7 +11,7 @@ function addressStreet2Validation() {
     let inputID = 'street2'
     let validationID = 'validation_street2'
     let btnID = 'addressNextBtn'
-    let regex = /^[a-zA-Z0-9-_\s]+$/;
+    let regex = /^[a-zA-Z0-9-_\\//s]+$/;
     checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12, validateAddressForm);
 }
 

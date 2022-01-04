@@ -21,7 +21,11 @@
 											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 											<!-- slug -->
 											<input type="hidden" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" />
-
+											<div class="clearfix oe_login_buttons">
+												<button type="submit" id="addressNextBtn" class="btn btn-primary pull-right">
+													Next
+												</button>
+											</div>
 											<!-- street -->
 											<div class="form-group">
 												<label for="street" class="control-label">

@@ -29,6 +29,7 @@
         'views/service_profile.xml',
         'views/web/create_service_profile.xml',
         'views/web/create_service_address.xml',
+        'views/web/create_service_image.xml',
 
         # 'views/templates.xml',
     ],

@@ -11,6 +11,6 @@ class BusinessAddress(http.Controller):
         location = kw.pop('location', None)
         profile = request.env['res.partner'].sudo().search([('business_slug', '=', business_slug)])
         profile.write(kw)
-        return request.render('service_profiles.create_address', {
+        return request.render('service_profiles.create_image', {
             'business_slug': business_slug
         })
