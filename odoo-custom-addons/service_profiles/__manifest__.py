@@ -31,13 +31,24 @@
         'views/web/create_service_address.xml',
         'views/web/create_service_image.xml',
         'views/web/profile_redirect.xml',
-        'views/assets.xml',
         # 'views/templates.xml',
     ],
+    # 'assets': {
+    #     'web.assets_backend' [
+    #         'service_profiles/static/css/profile.css',
+    #         'service_profiles/static/js/profile.js',
+    #         'service_profiles/static/js/address-profile.js',
+    #     ],},
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'service_profiles/static/css/profile.css',
+            'service_profiles/static/js/profile.js',
+            'service_profiles/static/js/address-profile.js',
+        ], },
     'installable': True,
     'application': True,
     'auto_install': False,

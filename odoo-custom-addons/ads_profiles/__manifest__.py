@@ -31,8 +31,13 @@
         'views/web/ads_profile_form.xml',
         'views/web/ads_images_form.xml',
         'views/web/ads_address_form.xml',
-        'views/assets.xml'   
     ],
+    'assets': {
+        'web.assets_backend': [
+            'ads_profiles/static/css/ads.css',
+            'ads_profiles/static/js/ads.js',
+            'ads_profiles/static/js/ads_address.js',
+        ], },
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
