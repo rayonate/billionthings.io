@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<!-- creating the menu in the website -->
-	<record id="web_menu_new_book" model="website.menu">
-		<field name="name">New Ads Profile</field>
-		<field name="url">/addprofiles/create/</field>
-		<field name="parent_id" ref="website.main_menu" />
-		<field name="sequence" type="int">55</field>
-	</record>
+	
 	<template id="create_addprofiles" name="New Book">
 		<t t-call="website.layout">
 			<div id="wrap">

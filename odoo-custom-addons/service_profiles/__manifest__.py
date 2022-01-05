@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Service Profiles",
-
+    'sequence': 10,
     'summary': """
         Service Profiles of the service providers
         """,
@@ -25,12 +25,13 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/assets.xml',
+
         'views/service_profile.xml',
         'views/web/create_service_profile.xml',
         'views/web/create_service_address.xml',
         'views/web/create_service_image.xml',
-
+        'views/web/profile_redirect.xml',
+        'views/assets.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

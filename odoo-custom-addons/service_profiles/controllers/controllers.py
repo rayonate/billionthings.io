@@ -6,6 +6,24 @@ import os.path
 
 
 class Business(http.Controller):
+    @http.route('/select/profile/', type="http", website=True, auth='public')
+    def render_select_profile_view(self, **kw):
+        return request.render('service_profiles.select_profile', {})
+        # return request.render('service_profiles.create_profile', {})
+    
+    @http.route('/profiles/create/', type="http", website=True, auth='public')
+    def rendirect_select_profile_view(self, **kw):
+        print(kw.get('role'))
+        role = kw.get('role')
+        if role == "service":
+            return request.render('service_profiles.create_profile', {})
+        elif role == "advertiser":
+            return request.render('ads_profiles.create_addprofiles', {})
+        else:
+            return request.render('service_profiles.create_profile', {}) 
+
+            
+    
     # render approved profile list
     @http.route('/busines/profiles/approved/', auth='public', website=True)
     def approved_list(self, **kw):
@@ -19,11 +37,6 @@ class Business(http.Controller):
         return request.render('service_profiles.profiles_list_page', {
             'profiles': profiles
         })
-
-    # render profile creation form
-    @http.route('/profiles/create/', type="http", website=True, auth='public')
-    def service_profile_webform(self, **kw):
-        return request.render('service_profiles.create_profile', {})
 
     # redirect user to the address creation
     @http.route('/profiles/address', type="http", website=True, auth='public')

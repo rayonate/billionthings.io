@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!-- creating the menu in the website -->
-	<record id="web_menu_new_profile" model="website.menu">
-		<field name="name">New Profile</field>
-		<field name="url">/profiles/create/</field>
-		<field name="parent_id" ref="website.main_menu" />
-		<field name="sequence" type="int">55</field>
- </record>
+
 
 	<template id="create_profile" name="New Book">
 		<t t-call="website.layout">
 			<div id="wrap">
 				<div class="oe_structure">
 					<div class="container">
+						<h2 class="text-center">Create Service Profile</h2>
 						<div class="row mt-5">
 							<div class="col-4 bg-info align-items-center">
 								<h2>
@@ -61,7 +57,7 @@
 												<input onkeyup="businessSlugValidation()" type="text" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" required="required" />
 												<div class="validation-error-msg" id="validation_slug"></div>
 											</div>
-											
+
 											<!-- description -->
 											<div class="form-group">
 												<label for="description" class="control-label">
