@@ -1,3 +1,4 @@
+let advertiserExists = 'This Advertiser title is already taken'
 
 function categoryValidation() {
     let inputID = 'bt_category'
@@ -28,7 +29,7 @@ function titleValidation() {
             console.log(json);
             console.log(json.result.data);
             if (json.result.data.exists) {
-                raiseValidationError('bt_title', 'validation_title', 'adsProfileNextBtn', serviceExists);
+                raiseValidationError('bt_title', 'validation_title', 'adsProfileNextBtn', advertiserExists);
             } else {
                 checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 20);
             }
@@ -36,9 +37,17 @@ function titleValidation() {
         .catch(err => console.log(err));
 }
 
-function descriptionValidation() {
+function descriptionValidation2() {
     let inputID = 'bt_description'
-    let validationID = 'validation_description'
+    let validationID = 'validation_description2'
+    let btnID = 'adsProfileNextBtn'
+    let regex = /^[a-zA-Z\s]+$/;
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 200)
+}
+
+function adsNameValidation() {
+    let inputID = 'name'
+    let validationID = 'validation_ads_name'
     let btnID = 'adsProfileNextBtn'
     let regex = /^[a-zA-Z\s]+$/;
     checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 200)

@@ -15,19 +15,20 @@
     <menuitem name="Ads Profiles" id="profile_base_menu" />
     <menuitem name="Profiles" id="profile_menu" parent="profile_base_menu" action="action_ads_profiles" />
 
-
-    <record id="view_ads_profile_form_inherited" model="ir.ui.view">
-        <field name="name">ad_profile.inherited</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="arch" type="xml">
-            <field name="type" position="before">
-                <field name="bt_category"/>
-                <field name="bt_title"/>
-                <field name="bt_description"/>
-            </field>
-        </field>
-    </record>
+       <!-- form view-->
+       <record id="view_ads_profile_form_inherited" model="ir.ui.view">
+             <field name="name">res.partner.inherited</field>
+             <field name="model">res.partner</field> 
+             <field name="inherit_id" ref="base.view_partner_form"/>
+             <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="bt_category">Category</field>
+                    <field name="bt_title">Title</field>
+                    <field name="bt_description">Description</field>
+                </xpath>
+             </field>
+       </record>
+      <!--end of form view-->
 
        <record id="view_partner_tree" model="ir.ui.view">
             <field name="name">res.partner.tree</field>
@@ -41,7 +42,6 @@
                     <field name="bt_category"/>
                     <field name="bt_title"/>
                     <field name="bt_description"/>
-
 
                     <field name="phone" class="o_force_ltr" optional="show"/>
                     <field name="email" optional="show"/>

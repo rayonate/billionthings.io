@@ -9,14 +9,7 @@ class AdsProfile(http.Controller):
 
      @http.route('/addprofiles/create/', type="http", website=True, auth='public')
      def book_webform(self, **kw):
-        print("testing one two three")
-        print(request.env.user)
-        print(request.env.user[0])
-        print(request.env.user == request.env.user[0])
-        name = request.env.user.name
-        return request.render('ads_profiles.create_addprofiles', {
-           'name': request.env.user.name
-        })
+        return request.render('ads_profiles.create_addprofiles', {})
 
      @http.route('/addprofiles/create/action', type="http", website=True, auth='public')
      def library_book_create(self, **kw):
@@ -24,47 +17,39 @@ class AdsProfile(http.Controller):
         user = request.env.user
         bt_title = kw.get('bt_title')
         service = request.env['res.partner'].sudo().create(kw)
-        service.write({'user_id': user.id})
-        profile = request.env['res.partner'].sudo().search(
-            [('bt_title', '=', bt_title)])
-        print(profile.id)
-        id = profile.id
+        print("+++++++++++++++++profile get+++++++++++++++++++++", service)
         return request.render('ads_profiles.create_addprofileImages', {
-           'id': id
+           'bt_title': bt_title
         })
 
      @http.route('/addprofiles/images/create/action', type="http", website=True, auth='public')
      def profile_address_create(self, **kw):
         print('==============profile-update-data=============', kw)
-        id = kw.get('id')
-
+        bt_title = kw.get('bt_title')
         #image_1920 = kw.get('image_1920')
-
         #file = kw.get('image_1920')
         #image_1920 = file.read() 
-
-   
-        profile = request.env['res.partner'].sudo().search([('id', '=', id)])
+        profile = request.env['res.partner'].sudo().search([('bt_title', '=', bt_title)])
         #profile.write({'image_1920': image_1920.encode('base64')})
         print("+++++++++++++++++profile get+++++++++++++++++++++", profile)
         return request.render('ads_profiles.create_address', {
-           'id': id
+           'bt_title': bt_title
         })
 
      @http.route('/addprofiles/address/create/action', type="http", website=True, auth='public')
      def profile_adcreate(self, **kw):
         print('==============profile-update-data=============', kw)
-        id = kw.get('id')
-        profile = request.env['res.partner'].sudo().search([('id', '=', id)])
+        bt_title = kw.get('bt_title')
+        profile = request.env['res.partner'].sudo().search([('bt_title', '=', bt_title)])
         print('==============profile=============', profile)
-        street = kw.get('street')
-        street2 = kw.get('street2')
-        city = kw.get('city')
-        province = kw.get('province')
-        zip = kw.get('code')
-        phone = kw.get('phone')
-        mobile = kw.get('mobile')
-        email = kw.get('email')
+        street = kw.get('street_ads')
+        street2 = kw.get('street2_ads')
+        city = kw.get('city_ads')
+        province = kw.get('province_ads')
+        zip = kw.get('code_ads')
+        phone = kw.get('phone_ads')
+        mobile = kw.get('mobile_ads')
+        email = kw.get('email_ads')
         profile.write({'street': street, 'street2': street2, 'city': city, 'province': province,
                       'zip': zip, 'phone': phone, 'mobile': mobile, 'email': email})
         print("+++++++++++++++++profile get+++++++++++++++++++++", profile)
@@ -93,7 +78,7 @@ class AdsProfile(http.Controller):
                 'data': {
                     'code': 200,
                     'exists': False,
-                    'message': "Title Slug is available"
+                    'message': "Title is available"
                 }
             }
         return output

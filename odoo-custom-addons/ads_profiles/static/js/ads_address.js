@@ -1,69 +1,69 @@
-function addressStreetValidation() {
-    let inputID = 'street'
-    let validationID = 'validation_street'
+function addressStreetValidationAds() {
+    let inputID = 'street_ads'
+    let validationID = 'validation_street_ads'
     let btnID = 'adsProfileBtn'
     let regex = /^[a-zA-Z0-9-_\s]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12);
 }
 
-function addressStreet2Validation() {
-    let inputID = 'street2'
-    let validationID = 'validation_street2'
+function addressStreet2ValidationAds() {
+    let inputID = 'street2_ads'
+    let validationID = 'validation_street2_ads'
     let btnID = 'adsProfileBtn'
     let regex = /^[a-zA-Z0-9-_\s]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 2, 12);
 }
 
-function addressCityValidation() {
-    let inputID = 'city'
-    let validationID = 'validation_city'
+function addressCityValidationAds() {
+    let inputID = 'city_ads'
+    let validationID = 'validation_city_ads'
     let btnID = 'adsProfileBtn'
     let regex = /^[a-zA-Z\s]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 20, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 20);
 }
 
-function addressZipValidation() {
-    let inputID = 'code'
-    let validationID = 'validation_zip'
+function addressZipValidationAds() {
+    let inputID = 'code_ads'
+    let validationID = 'validation_zip_ads'
     let btnID = 'adsProfileBtn'
     let regex = /^[a-zA-Z0-9-_\s]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12);
 }
 
-function addressPhoneValidation() {
-    let inputID = 'phone'
-    let validationID = 'validation_tp1'
+function addressPhoneValidationAds() {
+    let inputID = 'phone_ads'
+    let validationID = 'validation_tp1_ads'
     let btnID = 'adsProfileBtn'
     let regex = /[0-9+]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12);
 }
 
-function addressMobileValidation() {
-    let inputID = 'mobile'
-    let validationID = 'validation_tp2'
+function addressMobileValidationAds() {
+    let inputID = 'mobile_ads'
+    let validationID = 'validation_tp2_ads'
     let btnID = 'adsProfileBtn'
     let regex = /[0-9+]+$/;
-    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12, validateAddressForm);
+    checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 12);
 }
 
-function addressEmailValidation() {
-    let inputID = 'email'
-    let validationID = 'validation_email'
+function addressEmailValidationAds() {
+    let inputID = 'email_ads'
+    let validationID = 'validation_email_ads'
     let btnID = 'adsProfileBtn'
     let regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 50);
 }
 
 
-function validateAddressForm() {
+function validateAddressFormAds() {
     if (
-        (document.getElementById("validation_tp1").innerHTML == "") &&
-        (document.getElementById("validation_tp2").innerHTML == "") &&
-        (document.getElementById("validation_email").innerHTML == "") &&
-        (document.getElementById("validation_no").innerHTML == "") &&
-        (document.getElementById("validation_address1").innerHTML == "") &&
-        (document.getElementById("validation_address2").innerHTML == "") &&
-        (document.getElementById("validation_zip").innerHTML == "")
+        (document.getElementById("validation_tp1_ads").innerHTML == "") &&
+        (document.getElementById("validation_tp2_ads").innerHTML == "") &&
+        (document.getElementById("validation_email_ads").innerHTML == "") &&
+        (document.getElementById("validation_no_ads").innerHTML == "") &&
+        (document.getElementById("validation_address1_ads").innerHTML == "") &&
+        (document.getElementById("validation_address2_ads").innerHTML == "") &&
+        (document.getElementById("validation_zip_ads").innerHTML == "")
     ) {
         document.getElementById("adsProfileBtn").disabled = false;
         console.log("form is valid");

@@ -17,8 +17,9 @@
     'assets': {
         'web.assets_frontend': [
             'auth/static/css/auth.css',
-            'auth/static/js/auth.js',
-        ], },
+            'auth/static/js/auth.js'
+        ]
+    },
     'demo': [],
     'installable': True,
     'application': True,

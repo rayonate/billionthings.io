@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="create_address" name="New Book">
+	<template id="create_address" name="New Book">
 		<t t-call="website.layout">
 			<div id="wrap">
 				<div class="oe_structure">
@@ -14,78 +14,94 @@
 									Add the location address of your Ad.
 								</p>
 							</div>
-
 							<div class="col-8 border border-primary">
 								<div class="row my-5">
 									<div class="col-8 mx-auto">
 										<form role="form" action="/addprofiles/address/create/action" method="POST">
 											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
-											<input type="hidden" name="id" t-att-value="id" id="id" class="form-control" />
+											<input type="hidden" name="bt_title" t-att-value="bt_title" id="bt_title" class="form-control" />
+											
+											<!-- street -->
 											<div class="form-group">
-												<label for="addressLine1" class="control-label">
-													Address Line 1<span class="text-danger">*</span>
+												<label for="street_ads" class="control-label">
+													No
+													<span class="text-danger">*</span>
 												</label>
-												<input onkeyup="addressStreetValidation()" type="text" name="street2" t-att-value="street2" id="street2" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_address1"></div>
-											</div>
-											<div class="form-group">
-												<label for="no" class="control-label">
-													Address Line 2<span class="text-danger">*</span>
-												</label>
-												<input onkeyup="addressStreet2Validation()" type="text" name="street" t-att-value="street" id="street" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_address2"></div>
+												<input onkeyup="addressStreetValidationAds()" type="text" name="street_ads" t-att-value="street_ads" id="street_ads" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_street_ads"></div>
 											</div>
 
+											<!-- street2 -->
 											<div class="form-group">
-												<label for="addressLine2" class="control-label">
+												<label for="street2_ads" class="control-label">
+													Address Line 1
+													<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressStreet2ValidationAds()" type="text" name="street2_ads" t-att-value="street2_ads" id="street2_ads" class="form-control" required="required" />
+											</div>
+											<div class="validation-error-msg" id="validation_street2_ads"></div>
+
+											<!-- city -->
+											<div class="form-group">
+												<label for="city_ads" class="control-label">
 													City
+													<span class="text-danger">*</span>
 												</label>
-												<input onkeyup="addressCityValidation()" type="text" name="city" t-att-value="city" id="city" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_address2"></div>
+												<input onkeyup="addressCityValidationAds()" type="text" name="city_ads" t-att-value="city_ads" id="city_ads" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_city_ads"></div>
 											</div>
 
-                                             <div class="form-group">
-												<label for="province" class="control-label">
-													Province<span class="text-danger">*</span>
-												</label>
-												<input  type="text" name="province" t-att-value="province" id="province" class="form-control" required="required" />
-
-											</div>
-											
-											
+											<!-- zip -->
 											<div class="form-group">
-												<label for="code" class="control-label">
-													Postal Code
+												<label for="code_ads" class="control-label">
+													Zip
+													<span class="text-danger">*</span>
 												</label>
-												<input onkeyup="addressZipValidation()" type="text" name="code" t-att-value="code" id="code" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_zip"></div>
+												<input onkeyup="addressZipValidationAds()" type="text" name="code_ads" t-att-value="code_ads" id="code_ads" 
+												class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_zip_ads"></div>
 											</div>
 
+											<!-- phone -->
+											<div class="form-group">
+												<label for="phone_ads" class="control-label">
+													Telephone 1
+													<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressPhoneValidationAds()" type="text" name="phone_ads" t-att-value="phone_ads" id="phone_ads" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_tp1_ads"></div>
+											</div>
+
+											<!-- mobile -->
+											<div class="form-group">
+												<label for="mobile_ads" class="control-label">
+													Mobile
+												</label>
+												<input onkeyup="addressMobileValidationAds()" type="text" name="mobile_ads" t-att-value="mobile_ads" id="mobile_ads" class="form-control" />
+												<div class="validation-error-msg" id="validation_tp2_ads"></div>
+											</div>
+
+											<!-- email -->
+											<div class="form-group">
+												<label for="email_ads" class="control-label">
+													Email
+													<span class="text-danger">*</span>
+												</label>
+												<input onkeyup="addressEmailValidationAds()" type="text" name="email_ads" t-att-value="email_ads" id="email_ads" class="form-control" required="required" />
+												<div class="validation-error-msg" id="validation_email_ads"></div>
+											</div>
+
 
 											<div class="form-group">
-												<label for="telephone1" class="control-label">
-													Telephone 1<span class="text-danger">*</span>
+												<label for="locationl_ads" class="control-label">
+													Location
 												</label>
-												<input onkeyup="addressPhoneValidation()" type="text" name="phone" t-att-value="phone" id="phone" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_tp1"></div>
+												<input type="text" name="location_ads" t-att-value="locationl_ads" id="location_ads" class="form-control" />
 											</div>
-											<div class="form-group">
-												<label for="telephone2" class="control-label">
-													Telephone 2
-												</label>
-												<input onkeyup="addressMobileValidation()" type="text" name="mobile" t-att-value="mobile" id="mobile" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_tp2"></div>
-											</div>
-											<div class="form-group">
-												<label for="email" class="control-label">
-													Email<span class="text-danger">*</span>
-												</label>
-												<input onkeyup="addressEmailValidation()" type="text" name="email" t-att-value="email" id="email" class="form-control" required="required" />
-											<div class="validation-error-msg" id="validation_email"></div>
-											</div>
+
 
 											<div class="clearfix oe_login_buttons">
-												<button id="adsProfileBtn" type="submit" class="btn btn-primary pull-right">
+												<button type="submit" id="adsProfileBtn" class="btn btn-primary pull-right">
 													Create
 												</button>
 											</div>
@@ -94,12 +110,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="row mt-5">
-						</div>
+						<div class="row mt-5"></div>
 					</div>
 				</div>
 			</div>
 		</t>
 	</template>
-
 </odoo>

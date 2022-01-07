@@ -78,7 +78,7 @@
                     <input type="hidden" name="redirect" t-att-value="redirect"/>
                     <input type="hidden" name="token" t-att-value="token"/>
                     <div class="text-center oe_login_buttons pt-3">
-                        <button onclick="validateForm()"  type="submit" id="btnSignUp"  class="btn btn-primary btn-block">Sign up</button>
+                        <button onclick="validateFormAuth()"  type="submit" id="btnSignUp"  class="btn btn-primary btn-block">Sign up</button>
                         <a t-attf-href="/web/login?{{ keep_query() }}" class="btn btn-link btn-sm" role="button">Already have an account?</a>
                         <div class="o_login_auth"/>
                     </div>
