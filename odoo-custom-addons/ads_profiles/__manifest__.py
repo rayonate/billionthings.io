@@ -33,7 +33,7 @@
         'views/web/ads_address_form.xml',
     ],
     'assets': {
-        'web.assets_backend': [
+        'web.assets_frontend': [
             'ads_profiles/static/css/ads.css',
             'ads_profiles/static/js/ads.js',
             'ads_profiles/static/js/ads_address.js',

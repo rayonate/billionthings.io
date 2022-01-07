@@ -44,7 +44,7 @@
         'demo/demo.xml',
     ],
     'assets': {
-        'web.assets_backend': [
+        'web.assets_frontend': [
             'service_profiles/static/css/profile.css',
             'service_profiles/static/js/profile.js',
             'service_profiles/static/js/address-profile.js',

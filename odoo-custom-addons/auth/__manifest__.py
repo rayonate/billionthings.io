@@ -15,7 +15,7 @@
         'views/website_form.xml',
     ],
     'assets': {
-        'web.assets_backend': [
+        'web.assets_frontend': [
             'auth/static/css/auth.css',
             'auth/static/js/auth.js',
         ], },
