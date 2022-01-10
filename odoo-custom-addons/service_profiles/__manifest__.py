@@ -27,6 +27,7 @@
         'security/ir.model.access.csv',
 
         'views/service_profile.xml',
+        'views/gallery.xml',
         'views/web/create_service_profile.xml',
         'views/web/create_service_address.xml',
         'views/web/create_service_image.xml',
