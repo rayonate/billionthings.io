@@ -53,6 +53,13 @@ function adsNameValidation() {
     checkRegexMinMaxValidations(inputID, validationID, btnID, regex, 3, 200)
 }
 
+function categoryValidation() {
+    let inputID = 'bt_category'
+    let validationID = 'validation_category'
+    let btnID = 'adsProfileNextBtn'
+    checkRegexMinMaxValidations(inputID, validationID, btnID)
+}
+
 function validateAdsProfileForm() {
     if (
         (document.getElementById("validation_category").innerHTML == "") &&

@@ -26,11 +26,16 @@ class AdsProfile(http.Controller):
      def profile_address_create(self, **kw):
         print('==============profile-update-data=============', kw)
         bt_title = kw.get('bt_title')
-        #image_1920 = kw.get('image_1920')
-        #file = kw.get('image_1920')
-        #image_1920 = file.read() 
+
         profile = request.env['res.partner'].sudo().search([('bt_title', '=', bt_title)])
-        #profile.write({'image_1920': image_1920.encode('base64')})
+        
+
+        image_1920 = kw.get('image_1920')
+        imageFile=image_1920.read()
+        d_imageFile = base64.b64encode(imageFile)
+
+        
+        profile.write({'image_1920': d_imageFile })
         print("+++++++++++++++++profile get+++++++++++++++++++++", profile)
         return request.render('ads_profiles.create_address', {
            'bt_title': bt_title
