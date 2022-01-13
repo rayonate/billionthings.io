@@ -17,7 +17,7 @@
 							<div class="col-8 border border-primary">
 								<div class="row my-5">
 									<div class="col-8 mx-auto">
-										<form role="form" action="/profiles/address/create/action" method="POST">
+										<form role="form" action="/images/create" method="POST">
 											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 											<!-- slug -->
 											<input type="hidden" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" />

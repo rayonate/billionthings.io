@@ -4,7 +4,7 @@ import json
 
 
 class BusinessAddress(http.Controller):
-    @http.route('/profiles/address/create/action', type="http", website=True, auth='public')
+    @http.route('/images/create', type="http", website=True, auth='public')
     def service_address_create(self, **kw):
         print('------------print POST data', kw)
         business_slug = kw.pop('business_slug', None)

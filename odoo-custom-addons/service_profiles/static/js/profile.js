@@ -12,15 +12,16 @@ function raiseValidationError(inputID, validationID, btnID, msg) {
     document.getElementById(validationID).innerHTML = msg;
     document.getElementById(btnID).setAttribute('disabled', true);
 }
+
 function clearValidationError(inputID, validationID, btnID, formFunc) {
     var elem = document.getElementById(inputID);
     elem.classList.add("valid-input-field");
     elem.classList.remove("invalid-input-field");
     document.getElementById(validationID).innerHTML = "";
     document.getElementById(btnID).removeAttribute('disabled');
-    if (formFunc === undefined ) {
-        
-    }else{
+    if (formFunc === undefined) {
+
+    } else {
         formFunc();
     }
 }
@@ -101,3 +102,5 @@ function validateForm() {
         document.getElementById("profileNextBtn").setAttribute('disabled', true);
     }
 }
+
+$('.input-images-1').imageUploader();

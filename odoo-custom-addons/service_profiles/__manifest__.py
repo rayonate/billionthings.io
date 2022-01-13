@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-
+        'views/assets.xml',
         'views/service_profile.xml',
         'views/gallery.xml',
         'views/web/create_service_profile.xml',
@@ -34,21 +34,18 @@
         'views/web/profile_redirect.xml',
         # 'views/templates.xml',
     ],
-    # 'assets': {
-    #     'web.assets_backend' [
-    #         'service_profiles/static/css/profile.css',
-    #         'service_profiles/static/js/profile.js',
-    #         'service_profiles/static/js/address-profile.js',
-    #     ],},
-    # only loaded in demonstration mode
+
     'demo': [
         'demo/demo.xml',
     ],
     'assets': {
         'web.assets_frontend': [
+            'service_profiles/static/css/image-uploader.css',
             'service_profiles/static/css/profile.css',
+            'service_profiles/static/js/image-uploader.js', 
             'service_profiles/static/js/profile.js',
             'service_profiles/static/js/address-profile.js',
+         
         ], },
     'installable': True,
     'application': True,
