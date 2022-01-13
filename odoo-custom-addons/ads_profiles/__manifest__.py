@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Ads Profile",
+    
     'sequence': 10,
     'summary': """
         Ads Profile of the service providers

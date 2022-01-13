@@ -25,6 +25,7 @@
                     <field name="bt_category">Category</field>
                     <field name="bt_title">Title</field>
                     <field name="bt_description">Description</field>
+                    <field name="bt_status">Status</field>
                 </xpath>
              </field>
        </record>
@@ -55,5 +56,28 @@
                 </tree>
             </field>
         </record>
+
+    <!-- Search view -->
+	<record id="view_profile_search" model="ir.ui.view">
+		<field name="name">res.partner.search</field>
+		<field name="model">res.partner</field>
+		<field name="arch" type="xml">
+			<search string="Ad profile">
+				<separator />
+				<filter string="Approved" name="approved" domain="[('bt_status', '=', 'approved')]" />
+                <filter string="Pending" name="pending" domain="[('bt_status', '=', 'pending')]" />
+				<filter string="Rejected" name="rejected" domain="[('bt_status', '=', 'rejected')]" />	
+                <group expand="1" string="Group By">
+					<filter string="Name" name="display_name" context="{'group_by':'display_name'}" />
+					<filter string="Phone" name="phone" context="{'group_by':'phone'}" />
+					<filter string="Email" name="email" context="{'group_by':'email'}" />
+					<filter string="Status" name="bt_status" context="{'group_by':'bt_status'}" />
+				</group>
+			</search>
+		</field>
+	</record>
+	<!-- End of Search view -->
+
+
 </odoo>
 

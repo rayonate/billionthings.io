@@ -12,5 +12,10 @@ class AdsProfile(models.Model):
     ], string='Category' )
     bt_title = fields.Char(string='Title')
     bt_description = fields.Text(string='Description')
+    bt_status = fields.Selection([
+        ('approved', 'Approved'),
+        ('pending', 'Pending'),
+        ('rejected', 'rejected'),
+    ], default='pending' ,string='Status')
     
 
