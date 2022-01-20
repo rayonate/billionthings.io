@@ -16,3 +16,12 @@
     background-position: right 10px center;
     border: 1px solid red !important;
 }
+
+
+#display_image {
+    width: 300px;
+    height: 169px;
+    border: hidden;
+    background-position: center;
+    background-size: cover;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_service_award" model="ir.actions.act_window">
+        <field name="name">Awards</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">service.award</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Awards
+            </p>
+        </field>
+    </record>
+    <menuitem id="award_sub_sub_root" name="Award" parent="service_profiles_sub_root"
+              action="action_service_award" sequence="10"/>
+
+    <record id="business_award_view_form" model="ir.ui.view">
+        <field name="name">service.award.form</field>
+        <field name="model">service.award</field>
+        <field name="arch" type="xml">
+            <form string="Award">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="image" widget="image" class="oe_avatar"/>
+                            <field name="business_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="business_award_view_tree" model="ir.ui.view">
+        <field name="name">service.award.tree</field>
+        <field name="model">service.award</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+                <field name="image"/>
+                <field name="business_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

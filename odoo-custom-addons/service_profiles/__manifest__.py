@@ -28,6 +28,7 @@
         'views/assets.xml',
         'views/service_profile.xml',
         'views/gallery.xml',
+        'views/awards.xml',
         'views/web/create_service_profile.xml',
         'views/web/create_service_address.xml',
         'views/web/create_service_image.xml',
@@ -40,11 +41,14 @@
     ],
     'assets': {
         'web.assets_frontend': [
+            # css
             'service_profiles/static/css/image-uploader.css',
             'service_profiles/static/css/profile.css',
+            # js
+            'service_profiles/static/js/jquery.repeater.js',
             'service_profiles/static/js/image-uploader.js', 
-            'service_profiles/static/js/profile.js',
             'service_profiles/static/js/address-profile.js',
+            'service_profiles/static/js/profile.js',
          
         ], },
     'installable': True,

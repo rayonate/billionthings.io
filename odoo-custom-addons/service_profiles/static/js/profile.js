@@ -104,3 +104,15 @@ function validateForm() {
 }
 
 $('.input-images-1').imageUploader();
+$(function() {
+    $('#repeater').repeater({
+      // options here
+      items: [{
+        elements: [{
+          name: '',
+          description: ''
+        },
+        ]
+      }]
+    });
+  });

@@ -21,10 +21,46 @@
 											<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 											<!-- slug -->
 											<input type="hidden" name="business_slug" t-att-value="business_slug" id="business_slug" class="form-control" />
-											
+
+											<div class="form-group">
+												<label for="logo" class="control-label">
+													Logo
+												</label>
+
+												<input multiple="true" accept="image/png, image/jpg" class="file" data-show-upload="true" data-show-caption="true" data-show-preview="true" name="logo" t-att-value="logo" id="logo" type="file" onchange="document.getElementById('display_image').src = window.URL.createObjectURL(this.files[0])" />
+												<img id="display_image" width="100" height="100" />
+
+											</div>
 											<div class="input-field">
 												<label class="active">Photos</label>
 												<div class="input-images-1" style="padding-top: .5rem;"></div>
+											</div>
+											<!-- awards -->
+											<h2 class="mt-5 text-center">Awards</h2>
+											<div id="repeater">
+												<input type="button" class="btn btn-success" id="createElement" value="Add Element" />
+												<div id="structure" class="border-top mt-3" style="display:none">
+													<!-- award name -->
+													<div class="form-group">
+														<label for="name"> Award Name </label>
+														<input id="name" name="name"   class="form-control" />
+													</div>
+													<!-- award description -->
+													<div class="form-group">
+														<label for="description"> Award Description </label>
+														<input id="description" name="description"   class="form-control" />
+													</div>
+													<!-- award images -->
+													<!-- <div class="form-group">
+														<label for="logo" class="control-label">
+															Award Image
+														</label>
+														<input multiple="true" accept="image/png, image/jpg" class="file" data-show-upload="true" data-show-caption="true" data-show-preview="true" name="logo" t-att-value="logo" id="image" type="file" onchange="document.getElementById('display_image_award').src = window.URL.createObjectURL(this.files[0])" />
+														<img id="display_image_award" width="100" height="100" />
+													</div> -->
+												</div>
+
+												<div id="containerElement"></div>
 											</div>
 											<div class="mt-3">
 												<div class="clearfix oe_login_buttons">
